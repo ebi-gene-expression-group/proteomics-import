@@ -90,7 +90,7 @@ rename_files(){
     # annotations from Ensembl.
     echo "decoration of protein expression matrix.."
     $projectRoot/../bioentity_annotations/decorate_baseline_rnaseq_experiment.sh $expTargetDir
-    organism=$($projectRoot/bash_util/get_organism.sh $expTargetDir)
+    organism=$($projectRoot/../bash_util/get_organism.sh $expTargetDir)
     geneNameFile=$(get_geneNameFile_given_organism $organism)
 	decorate_rnaseq_file ${expAcc}.tsv.undecorated.aggregated baseline "$geneNameFile" >&2
     
